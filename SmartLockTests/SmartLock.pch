@@ -1,0 +1,4 @@
+#ifndef SmartLock_pch
+#define SmartLock_pch
+
+#endif

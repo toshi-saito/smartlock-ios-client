@@ -1,0 +1,66 @@
+#ifndef SmartLock_pch
+#define SmartLock_pch
+
+/*
+ https://redbearlab.zendesk.com/entries/22953036-Bluetooth-Protocol-description-
+ 
+ BLE_DEVICE_SERVICE_UUID "713D0000-503E-4C75-BA94-3148F18D941E"
+ 
+ Characteristics
+ 
+ "713D0001-503E-4C75-BA94-3148F18D941E"  the vendor name, when reading it, it will reply "Red Bear Lab."
+ 
+ "713D0002-503E-4C75-BA94-3148F18D941E" for reading data from BLE Shield, enable it for notification.
+ 
+ "713D0003-503E-4C75-BA94-3148F18D941E" for writing data to BLE Shield.
+ 
+ "713D0004-503E-4C75-BA94-3148F18D941E"  for control the BLE Shield to send next data, once you get notification for 0002, you have to write a "1" to 0004, so that to allow BLE shield to send more data to you.
+ 
+ "713D0005-503E-4C75-BA94-3148F18D941E" for reading BLE Shield library version.
+*/
+
+#define SERVICE_UUID  @"713D0000-503E-4C75-BA94-3148F18D941E"
+#define CHARA_TX_UUID @"713D0002-503E-4C75-BA94-3148F18D941E"
+#define CHARA_RX_UUID @"713D0003-503E-4C75-BA94-3148F18D941E"
+#define UUID(v) [CBUUID UUIDWithString:v]
+
+#define ERROR_ALERT(msg) \
+    [[[UIAlertView alloc] initWithTitle: @"エラー" \
+        message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show]
+
+#define SEND_NOTIFICATION(msg) { \
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init]; \
+    localNotification.fireDate = [NSDate date];\
+    localNotification.alertBody = msg; \
+    localNotification.timeZone = [NSTimeZone localTimeZone]; \
+    localNotification.soundName = UILocalNotificationDefaultSoundName; \
+    localNotification.alertAction = @"SmartLock"; \
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification]; \
+    }
+
+#define PRESENT_VIEW_CONTROLLER(storyboardName) \
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil]; \
+    UIViewController *initialViewController = [storyboard instantiateInitialViewController]; \
+    [self presentViewController:initialViewController animated:YES completion:nil]
+
+#define REMOVE_OBSERVERS() \
+    [[NSNotificationCenter defaultCenter] removeObserver: self]
+
+#define OBSERVE(_name, _sel) \
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_sel) name:_name object:nil]
+
+#define POST(name) \
+    [[NSNotificationCenter defaultCenter] postNotification: [NSNotification notificationWithName:name object:self]]
+
+#define POST_WITH_DATA(name, data) \
+    [[NSNotificationCenter defaultCenter] postNotification: [NSNotification notificationWithName:name object:self userInfo:data]]
+
+
+#define DELAY_RUN(sec) \
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(sec * NSEC_PER_SEC)); \
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+
+#define DELAY_RUN_END });
+
+
+#endif
