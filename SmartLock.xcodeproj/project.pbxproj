@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F46D378B1AD94B2800CFEDF9 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46D378A1AD94B2800CFEDF9 /* InterfaceController.m */; };
+		F46D378E1AD94B2800CFEDF9 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46D378D1AD94B2800CFEDF9 /* NotificationController.m */; };
+		F46D37901AD94B2800CFEDF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46D378F1AD94B2800CFEDF9 /* Images.xcassets */; };
+		F46D37941AD94B2900CFEDF9 /* SmartLock WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = F46D37931AD94B2900CFEDF9 /* SmartLock WatchKit App.app */; };
+		F46D379C1AD94B2900CFEDF9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46D379A1AD94B2900CFEDF9 /* Interface.storyboard */; };
+		F46D379E1AD94B2900CFEDF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46D379D1AD94B2900CFEDF9 /* Images.xcassets */; };
+		F46D37A11AD94B2900CFEDF9 /* SmartLock WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F46D37841AD94B2800CFEDF9 /* SmartLock WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F4715A341A244CF40087694A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4715A331A244CF40087694A /* main.m */; };
 		F4715A371A244CF40087694A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4715A361A244CF40087694A /* AppDelegate.m */; };
 		F4715A3F1A244CF40087694A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4715A3E1A244CF40087694A /* Images.xcassets */; };
@@ -25,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F46D37951AD94B2900CFEDF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4715A261A244CF40087694A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F46D37921AD94B2900CFEDF9;
+			remoteInfo = "SmartLock WatchKit App";
+		};
+		F46D379F1AD94B2900CFEDF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4715A261A244CF40087694A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F46D37831AD94B2800CFEDF9;
+			remoteInfo = "SmartLock WatchKit Extension";
+		};
 		F4715A481A244CF40087694A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4715A261A244CF40087694A /* Project object */;
@@ -34,7 +55,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F46D37A81AD94B2900CFEDF9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F46D37A11AD94B2900CFEDF9 /* SmartLock WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F46D37841AD94B2800CFEDF9 /* SmartLock WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmartLock WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46D37871AD94B2800CFEDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46D37881AD94B2800CFEDF9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F46D37891AD94B2800CFEDF9 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		F46D378A1AD94B2800CFEDF9 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		F46D378C1AD94B2800CFEDF9 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		F46D378D1AD94B2800CFEDF9 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		F46D378F1AD94B2800CFEDF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F46D37931AD94B2900CFEDF9 /* SmartLock WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmartLock WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46D37991AD94B2900CFEDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46D379B1AD94B2900CFEDF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F46D379D1AD94B2900CFEDF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F46D37A91AD94D9700CFEDF9 /* SmartLock.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartLock.pch; sourceTree = "<group>"; };
 		F4715A2E1A244CF40087694A /* SmartLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4715A321A244CF40087694A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4715A331A244CF40087694A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +115,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F46D37811AD94B2800CFEDF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4715A2B1A244CF40087694A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,11 +139,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F46D37851AD94B2800CFEDF9 /* SmartLock WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F46D37891AD94B2800CFEDF9 /* InterfaceController.h */,
+				F46D378A1AD94B2800CFEDF9 /* InterfaceController.m */,
+				F46D378C1AD94B2800CFEDF9 /* NotificationController.h */,
+				F46D378D1AD94B2800CFEDF9 /* NotificationController.m */,
+				F46D378F1AD94B2800CFEDF9 /* Images.xcassets */,
+				F46D37861AD94B2800CFEDF9 /* Supporting Files */,
+				F46D37A91AD94D9700CFEDF9 /* SmartLock.pch */,
+			);
+			path = "SmartLock WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F46D37861AD94B2800CFEDF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F46D37871AD94B2800CFEDF9 /* Info.plist */,
+				F46D37881AD94B2800CFEDF9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F46D37971AD94B2900CFEDF9 /* SmartLock WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F46D379A1AD94B2900CFEDF9 /* Interface.storyboard */,
+				F46D379D1AD94B2900CFEDF9 /* Images.xcassets */,
+				F46D37981AD94B2900CFEDF9 /* Supporting Files */,
+			);
+			path = "SmartLock WatchKit App";
+			sourceTree = "<group>";
+		};
+		F46D37981AD94B2900CFEDF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F46D37991AD94B2900CFEDF9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F4715A251A244CF40087694A = {
 			isa = PBXGroup;
 			children = (
 				F4715A301A244CF40087694A /* SmartLock */,
 				F4715A4A1A244CF40087694A /* SmartLockTests */,
+				F46D37851AD94B2800CFEDF9 /* SmartLock WatchKit Extension */,
+				F46D37971AD94B2900CFEDF9 /* SmartLock WatchKit App */,
 				F4715A2F1A244CF40087694A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +196,8 @@
 			children = (
 				F4715A2E1A244CF40087694A /* SmartLock.app */,
 				F4715A471A244CF40087694A /* SmartLockTests.xctest */,
+				F46D37841AD94B2800CFEDF9 /* SmartLock WatchKit Extension.appex */,
+				F46D37931AD94B2900CFEDF9 /* SmartLock WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +294,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F46D37831AD94B2800CFEDF9 /* SmartLock WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46D37A71AD94B2900CFEDF9 /* Build configuration list for PBXNativeTarget "SmartLock WatchKit Extension" */;
+			buildPhases = (
+				F46D37801AD94B2800CFEDF9 /* Sources */,
+				F46D37811AD94B2800CFEDF9 /* Frameworks */,
+				F46D37821AD94B2800CFEDF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F46D37961AD94B2900CFEDF9 /* PBXTargetDependency */,
+			);
+			name = "SmartLock WatchKit Extension";
+			productName = "SmartLock WatchKit Extension";
+			productReference = F46D37841AD94B2800CFEDF9 /* SmartLock WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		F46D37921AD94B2900CFEDF9 /* SmartLock WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46D37A61AD94B2900CFEDF9 /* Build configuration list for PBXNativeTarget "SmartLock WatchKit App" */;
+			buildPhases = (
+				F46D37911AD94B2900CFEDF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SmartLock WatchKit App";
+			productName = "SmartLock WatchKit App";
+			productReference = F46D37931AD94B2900CFEDF9 /* SmartLock WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		F4715A2D1A244CF40087694A /* SmartLock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4715A511A244CF40087694A /* Build configuration list for PBXNativeTarget "SmartLock" */;
@@ -201,10 +334,12 @@
 				F4715A2A1A244CF40087694A /* Sources */,
 				F4715A2B1A244CF40087694A /* Frameworks */,
 				F4715A2C1A244CF40087694A /* Resources */,
+				F46D37A81AD94B2900CFEDF9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F46D37A01AD94B2900CFEDF9 /* PBXTargetDependency */,
 			);
 			name = SmartLock;
 			productName = SmartLock;
@@ -238,8 +373,16 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = toshiyuki;
 				TargetAttributes = {
+					F46D37831AD94B2800CFEDF9 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = E73BKXBR46;
+					};
+					F46D37921AD94B2900CFEDF9 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					F4715A2D1A244CF40087694A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = E73BKXBR46;
 					};
 					F4715A461A244CF40087694A = {
 						CreatedOnToolsVersion = 6.1;
@@ -262,11 +405,31 @@
 			targets = (
 				F4715A2D1A244CF40087694A /* SmartLock */,
 				F4715A461A244CF40087694A /* SmartLockTests */,
+				F46D37831AD94B2800CFEDF9 /* SmartLock WatchKit Extension */,
+				F46D37921AD94B2900CFEDF9 /* SmartLock WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F46D37821AD94B2800CFEDF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46D37901AD94B2800CFEDF9 /* Images.xcassets in Resources */,
+				F46D37941AD94B2900CFEDF9 /* SmartLock WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46D37911AD94B2900CFEDF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46D379C1AD94B2900CFEDF9 /* Interface.storyboard in Resources */,
+				F46D379E1AD94B2900CFEDF9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4715A2C1A244CF40087694A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +452,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F46D37801AD94B2800CFEDF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46D378E1AD94B2800CFEDF9 /* NotificationController.m in Sources */,
+				F46D378B1AD94B2800CFEDF9 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4715A2A1A244CF40087694A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +488,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F46D37961AD94B2900CFEDF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F46D37921AD94B2900CFEDF9 /* SmartLock WatchKit App */;
+			targetProxy = F46D37951AD94B2900CFEDF9 /* PBXContainerItemProxy */;
+		};
+		F46D37A01AD94B2900CFEDF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F46D37831AD94B2800CFEDF9 /* SmartLock WatchKit Extension */;
+			targetProxy = F46D379F1AD94B2900CFEDF9 /* PBXContainerItemProxy */;
+		};
 		F4715A491A244CF40087694A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F4715A2D1A244CF40087694A /* SmartLock */;
@@ -324,6 +506,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F46D379A1AD94B2900CFEDF9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F46D379B1AD94B2900CFEDF9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		F4715A401A244CF40087694A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -335,6 +525,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F46D37A21AD94B2900CFEDF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SmartLock WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F46D37A31AD94B2900CFEDF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "SmartLock WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F46D37A41AD94B2900CFEDF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = SmartLock_WatchKit_Extension;
+				INFOPLIST_FILE = "SmartLock WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		F46D37A51AD94B2900CFEDF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = SmartLock_WatchKit_Extension;
+				INFOPLIST_FILE = "SmartLock WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		F4715A4F1A244CF40087694A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +656,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -406,7 +668,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -417,9 +679,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SmartLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -427,9 +692,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SmartLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -470,6 +738,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F46D37A61AD94B2900CFEDF9 /* Build configuration list for PBXNativeTarget "SmartLock WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46D37A41AD94B2900CFEDF9 /* Debug */,
+				F46D37A51AD94B2900CFEDF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F46D37A71AD94B2900CFEDF9 /* Build configuration list for PBXNativeTarget "SmartLock WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46D37A21AD94B2900CFEDF9 /* Debug */,
+				F46D37A31AD94B2900CFEDF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F4715A291A244CF40087694A /* Build configuration list for PBXProject "SmartLock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

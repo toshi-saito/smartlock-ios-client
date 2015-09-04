@@ -50,7 +50,7 @@
     
     // BLEからの通知をうける
     OBSERVE(EVENT_CHANGE_VALUE, currentState:);
-    OBSERVE(EVENT_DONE_PAIRING, connected);
+    OBSERVE(EVENT_DO_PAIRING, connected);
     
     // lock / unlock を読み取って背景色を変更する
     if ([BLECentral sharedInstance].isConnected) {
@@ -159,6 +159,15 @@
 -(void)currentState:(NSNotification*)notification {
     // 通知の送信側から送られた値を取得する
     NSString *value = [[notification userInfo] objectForKey:@"val"];
+    
+    if ([value isEqualToString:@"PAIR"]) {
+        // 未ペアリング状態
+        REMOVE_OBSERVERS();
+        DELAY_RUN(0)
+        PRESENT_VIEW_CONTROLLER(@"Search");
+        DELAY_RUN_END
+        return;
+    }
     
     DELAY_RUN(0)
         [self.indicator stopAnimating];

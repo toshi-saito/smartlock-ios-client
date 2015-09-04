@@ -13,9 +13,11 @@
 
 #define RESTORE_KEY @"SmartLock-BLE-CENTRAL"
 
-#define UNLOCK_PHRASE @"unlock"
-#define LOCK_PHRASE @"lock"
-#define STATE_PHRASE @"state"
+#define UNLOCK_PHRASE @"O"
+#define LOCK_PHRASE @"C"
+#define STATE_PHRASE @"S"
+#define PAIRING_PHRASE @"PAIR"
+#define PASSPHRASE_PREFIX @"PSS_"
 
 @interface BLECentral() <CBCentralManagerDelegate, CBPeripheralDelegate>
 @end
@@ -82,7 +84,9 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)p advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     peripheral = p;
     [self reconnectPeripheral];
-
+    
+    NSLog(@"advertisementData: %@", advertisementData);
+    
     // 見つかったのでここでスキャンは終了する。
     [self stopScan];
     
@@ -154,7 +158,7 @@
 }
 
 -(void) startScan {
-    [manager scanForPeripheralsWithServices: @[UUID(SERVICE_UUID)] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: [NSNumber numberWithBool:YES]}];
+    [manager scanForPeripheralsWithServices: /*@[UUID(SERVICE_UUID)]*/nil options: @{CBCentralManagerScanOptionAllowDuplicatesKey: [NSNumber numberWithBool:YES]}];
 }
 
 -(void) stopScan {
@@ -191,17 +195,25 @@
 }
 
 -(void) lock {
-    [self writeValue: LOCK_PHRASE];
+    [self writeValue: [LOCK_PHRASE stringByAppendingString: Settings.passphrase]];
 }
 
 -(void) unlock {
-    [self writeValue: UNLOCK_PHRASE];
+    [self writeValue: [UNLOCK_PHRASE stringByAppendingString: Settings.passphrase]];
 }
 
 -(void) readState {
-    [self writeValue: STATE_PHRASE];
+    [self writeValue: [STATE_PHRASE stringByAppendingString: Settings.passphrase]];
 }
 
+-(void) pairing {
+    [self writeValue: PAIRING_PHRASE];
+}
+
+-(void) sendPassphrase: (NSString*) passphrase {
+    [Settings savePassphrase: passphrase];
+    [self writeValue: [PASSPHRASE_PREFIX stringByAppendingString:passphrase]];
+}
 
 -(void) enableNotify {
     [peripheral setNotifyValue:YES forCharacteristic:readCaracteristic];
@@ -236,7 +248,7 @@
     }
     
     if (readCaracteristic != nil && writeCaracteristic != nil) {
-        NSNotification *n = [NSNotification notificationWithName:EVENT_DONE_PAIRING object:self];
+        NSNotification *n = [NSNotification notificationWithName:EVENT_DO_PAIRING object:self];
         [[NSNotificationCenter defaultCenter] postNotification:n];
         
         // Auto Unlock

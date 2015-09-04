@@ -13,6 +13,7 @@
 #define AUTO_UNLOCK @"auto_unlock"
 #define UNLOCK_LOCATION_LAT @"unlock_location_lat"
 #define UNLOCK_LOCATION_LNG @"unlock_location_lng"
+#define PASSPHRASE @"passphrase"
 
 @implementation Settings
 
@@ -81,5 +82,16 @@
     return self.homeLocation != nil;
 }
 
++(NSString*) passphrase {
+    NSString* p = [self.defaults stringForKey:PASSPHRASE];
+    if (p == nil) p = @"";
+    return p;
+}
+
++(void) savePassphrase: (NSString*) passphrase {
+    [self with_synctonize:^(NSUserDefaults *d) {
+        [d setValue: passphrase forKey: PASSPHRASE];
+    }];
+}
 
 @end

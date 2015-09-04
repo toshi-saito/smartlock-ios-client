@@ -24,4 +24,7 @@
 +(CLLocation*) homeLocation;
 +(BOOL) hasHomeLocation;
 
++(NSString*) passphrase;
++(void) savePassphrase: (NSString*) passphrase;
+
 @end

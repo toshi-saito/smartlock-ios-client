@@ -10,7 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 #define EVENT_FOUND_PERIPHERAL @"found_peripheral"
-#define EVENT_DONE_PAIRING @"done_pairing"
+#define EVENT_DO_PAIRING @"do_pairing"
 #define EVENT_CHANGE_VALUE @"change_value"
 #define RECONNECT_INTERVAL 5.0
 
@@ -26,6 +26,8 @@
 -(BOOL) connect;
 -(void) lock;
 -(void) unlock;
+-(void) pairing;
+-(void) sendPassphrase: (NSString*) passphrase;
 -(void) readState;
 -(void) enableNotify;
 -(void) disableNotify;

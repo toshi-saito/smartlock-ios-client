@@ -16,8 +16,9 @@
 
 @end
 
-@implementation AppDelegate
-
+@implementation AppDelegate {
+    __block UIBackgroundTaskIdentifier bgTask;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -75,5 +76,65 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+void (^stateReply)(NSDictionary *);
+
+- (void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+    
+    NSString* action = [userInfo objectForKey:@"action"];
+    
+    bgTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[UIApplication sharedApplication] endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^{
+        if ([action isEqualToString:@"state"]) {
+            [[BLECentral sharedInstance] enableNotify];
+            stateReply = reply;
+            BOOL isConnected = [BLECentral sharedInstance].isConnected;
+            if (isConnected) {
+                [self connected];
+            } else {
+                [self reconnect];
+            }
+            return;
+        } else if ([action isEqualToString:@"lock"]) {
+            [[BLECentral sharedInstance] lock];
+            reply(nil);
+        } else if ([action isEqualToString:@"unlock"]) {
+            [[BLECentral sharedInstance] unlock];
+            reply(nil);
+        }
+        bgTask = UIBackgroundTaskInvalid;
+    });
+    
+    NSLog(@"action: %@", action);
+}
+
+- (void) connected {
+    OBSERVE(EVENT_CHANGE_VALUE, currentState:);
+    DELAY_RUN(1)
+    [[BLECentral sharedInstance] readState];
+    DELAY_RUN_END
+}
+
+-(void) reconnect {
+    OBSERVE(EVENT_DO_PAIRING, connected);
+    [[BLECentral sharedInstance] enableNotify];
+    [[BLECentral sharedInstance] connect];
+}
+
+-(void)currentState:(NSNotification*)notification {
+    NSString *value = [[notification userInfo] objectForKey:@"val"];
+    
+    if ([value isEqualToString: @"O"]) {
+        stateReply(@{@"state": @1});
+    } else {
+        stateReply(@{@"state": @0});
+    }
+    bgTask = UIBackgroundTaskInvalid;
+}
+
 
 @end
